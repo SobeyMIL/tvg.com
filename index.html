@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRDY29PQHJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MRDY29PQHJ');
+  </script>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>TVG: A Training-free Transition Video Generation Method with Diffusion Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/sobey.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <!-- <style>
+    .non-proportional-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill; /* This property ensures non-proportional scaling */
+    }
+  </style> -->
+  <style>
+    .non-proportional-cell img {
+      width: 210;
+      height: 210;
+      object-fit: fill; /* Ensure non-proportional scaling */
+    }
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">TVG: A Training-free Transition Video Generation Method with Diffusion Models</h1>
+          <img src="assets/banner.gif" width="80%"></img>
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=8KI7a8kAAAAJ/" target="_blank">Rui Zhang</a><sup>1,2,3</sup>,</span>
+            </span>
+              <a href="https://scholar.google.com.hk/citations?user=HvWZhM4AAAAJ" target="_blank">Yaosen Chen</a><sup>1,4</sup>,
+            </span>
+            <span class="author-block">
+              <a>Yuegen Liu</a><sup>1</sup>,</span>
+            <br>
+            <span class="author-block">
+              <a>Yuegen Liu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Xuming Wen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=QVHilp0AAAAJ/" target="_blank">Hongxia Wang</a><sup>2,3</sup>
+            </span>
+          </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <sup>1</sup>Sobey Media Intelligence Laboratory, Chengdu, China
+                  <br>
+                  <sup>2</sup>School of Cyber Science and Engineering, Sichuan University, Chengdu, China
+                  <sup>3</sup>Key Laboratory of Data Protection and Intelligent Management (Sichuan University), Ministry of Education, China
+                  <sup>4</sup>University of Electronic Science and Technology of China, Chengdu, China
+                </span>
+              </div>
+              
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2402.xxxxx" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                <span>arXiv</span>
+                </a>
+                </span>
+
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2402.xxxxx.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/SobeyMIL/TVG" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- <span class="link-block">
+                  <a href="https://huggingface.co/spaces/Yiyuan/InteractiveVideo" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                  <i class="fab fa-github"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+                  </span>
+                 -->
+                <!-- <span class="link-block">
+                  <a href="https://discord.gg/vm9AJByvej" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                  <i class="fab fa-github"></i>
+                  </span>
+                  <span>Discord</span>
+                  </a>
+                  </span> -->
+                <!-- Huggingface link -->
+                <!-- <a href="https://huggingface.co/spaces/Yiyuan/InteractiveVideo">
+                  <img src="assets/icons/huggingface.png" width="45" height="45">
+                </a> -->
+                <!-- YouTube link -->
+                <!-- <a href="https://www.youtube.com/watch?v=61_iS_ltxsc">
+                  <img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="45" height="45">
+                </a> -->
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--
+<video poster="" id="tree" autoplay controls muted loop height="100%">
+
+  <source src="static/videos/banner_video.mp4"
+  type="video/mp4">
+</video>
+-->
+<!-- <section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column ">
+        <h2 class="title is-3">Demo Video</h2>
+        <div class="center-div">
+                <iframe width="750px" height="415" src="https://www.youtube.com/embed/61_iS_ltxsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>      
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Paper abstract -->
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Transition videos play a crucial role in media production, enhancing the flow and coherence of visual narratives. 
+            Traditional methods like morphing often lack artistic appeal and require specialized skills, limiting their effectiveness.
+            Recent advances in diffusion model-based video generation offer new possibilities for creating transitions but face challenges such as poor 
+            inter-frame relationship modeling and abrupt content changes. We propose a novel training-free Transition Video Generation (TVG) approach using 
+            video-level diffusion models that addresses these limitations without additional training. Our method leverages Gaussian Process Regression (GPR) to 
+            model latent representations, ensuring smooth and dynamic transitions between frames. Additionally, we introduce interpolation-based conditional 
+            controls and a Frequency-aware Bidirectional Fusion (FBiF) architecture to enhance temporal control and transition reliability. 
+            Evaluations of benchmark datasets and custom image pairs demonstrate the effectiveness of our approach in generating high-quality smooth transition videos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<div class="columns is-centered has-text-centered">
+  <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
+</div>
+
+
+<div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">Approach</h2>
+      <div class="center-div">
+        <td>
+          <img src="static/images/framework.png" width="1024" height="512">
+        </td>
+        <!-- 添加文字说明 -->
+        <p class="image-caption"> Our Proposed Training-free TVG Method.</p>
+      </div>      
+    </div>
+  </div>
+</div>
+
+
+<div class="columns is-centered has-text-centered">
+  <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
+</div>
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+
+      <h2 class="subtitle has-text-centered">
+        <span></span> 1. TC-Bench Dataset. 
+      </h2>
+      <table class="center">
+        <td><img src=assets/tc-bench/11_0.png width="512" height='320'></td>
+        <td><img src=assets/tc-bench/11_1.png width="512" height='320'></td>
+        <td><video src="assets/tc-bench/11.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"Purple liquid in a transparent cup."</td>
+        <td style="text-align:center;" width="512">"Red liquid in a transparent cup"</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+      
+      <table class="center">
+        <td><img src=assets/tc-bench/20_0.png width="512" height='320'></td>
+        <td><img src=assets/tc-bench/20_1.png width="512" height='320'></td>
+        <td><video src="assets/tc-bench/20.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"A black cup."</td>
+        <td style="text-align:center;" width="512">"A cup with a collage of photos"</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+      <table class="center">
+        <td><img src=assets/tc-bench/40_0.png width="512" height='320'></td>
+        <td><img src=assets/tc-bench/40_1.png width="512" height='320'></td>
+        <td><video src="assets/tc-bench/40.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"A smooth metal surface."</td>
+        <td style="text-align:center;" width="512">"A corroded metal surface"</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+      <table class="center">
+        <td><img src=assets/tc-bench/52_0.png width="512" height='320'></td>
+        <td><img src=assets/tc-bench/52_1.png width="512" height='320'></td>
+        <td><video src="assets/tc-bench/52.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"A daddy pig with a newspaper."</td>
+        <td style="text-align:center;" width="512">"A daddy pig with a paper boat."</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+      <br>
+      <h2 class="subtitle has-text-centered">
+        <span></span> 2. MorphBench Dataset. 
+      </h2>
+      <table class="center">
+        <td><img src=assets/morphbench/cake_burger_0.png width="512" height='512'></td>
+        <td><img src=assets/morphbench/cake_burger_1.png width="512" height='512'></td>
+        <td><video src="assets/morphbench/cake_burger.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"A cake."</td>
+        <td style="text-align:center;" width="512">"A burger."</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+      <table class="center">
+        <td><img src=assets/morphbench/dog_wolf_0.png width="512" height='512'></td>
+        <td><img src=assets/morphbench/dog_wolf_1.png width="512" height='512'></td>
+        <td><video src="assets/morphbench/dog_wolf.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"A dog."</td>
+        <td style="text-align:center;" width="512">"A wolf."</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+      <table class="center">
+        <td><img src=assets/morphbench/Trump_Biden_0.png width="512" height='512'></td>
+        <td><img src=assets/morphbench/Trump_Biden_1.png width="512" height='512'></td>
+        <td><video src="assets/morphbench/Trump_Biden.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"An American man."</td>
+        <td style="text-align:center;" width="512">"An American man."</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+      <table class="center">
+        <td><img src=assets/morphbench/van_jeep_0.png width="512" height='512'></td>
+        <td><img src=assets/morphbench/van_jeep_1.png width="512" height='512'></td>
+        <td><video src="assets/morphbench/van_jeep.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"A van."</td>
+        <td style="text-align:center;" width="512">"A jeep."</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+      <table class="center">
+        <td><img src=assets/morphbench/van_mona_0.png width="512" height='512'></td>
+        <td><img src=assets/morphbench/van_mona_1.png width="512" height='512'></td>
+        <td><video src="assets/morphbench/van_mona.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+        <tr>
+        <td style="text-align:center;" width="512">"A portrait of Vincent van Gogh."</td>
+        <td style="text-align:center;" width="512">"A portrait of a woman with a serene expression, dark hair, and a subtle smile."</td>
+        <td style="text-align:center;" width="512">"Transition Video"</td>
+        <tr>
+      </table >
+
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+
+
+<div class="columns is-centered has-text-centered">
+  <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
+</div>
+
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column ">
+        <h2 class="title is-3">Comparison with Commercial Products </h2>
+
+        <table align="center">
+          <td style="text-align:center;" width="512">TVG</td>
+          <td style="text-align:center;" width="512">LUMA AI</td>
+          <td style="text-align:center;" width="512">KLing AI</td>
+          <td style="text-align:center;" width="512">Jimeng AI</td>
+          <tr></tr>
+          <td><video src="assets/cmp/our_0.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/luma_0.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/kling_0.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/jimeng_0.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+        </table >
+        <br>
+        <table align="center">
+          <tr></tr>
+          <td><video src="assets/cmp/our_1.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/luma_1.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/kling_1.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/jimeng_1.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+        </table>
+        <br>
+        <table align="center">
+          <tr></tr>
+          <td><video src="assets/cmp/our_2.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/luma_2.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/kling_2.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/jimeng_2.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+        </table>
+        <br>
+        <table>
+          <tr></tr>
+          <td><video src="assets/cmp/our_3.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/luma_3.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/kling_3.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/jimeng_3.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+        </table>
+        <br>
+        <table>
+          <tr></tr>
+          <td><video src="assets/cmp/our_4.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/luma_4.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/kling_4.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/jimeng_4.mp4" width="512" height="320" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="columns is-centered has-text-centered">
+  <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
+</div>
+
+
+<!-- <section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column ">
+        <h2 class="title is-3">Comparison with Existing Methods </h2>
+
+        <table align="center">
+          <td style="text-align:center;" width="210">TVG</td>
+          <td style="text-align:center;" width="210">DynamiCrafter</td>
+          <td style="text-align:center;" width="210">DiffMorpher</td>
+          <td style="text-align:center;" width="210">SEINE</td>
+          <tr></tr>
+          <td><video src="assets/cmp/InteractiveVideo-3.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/gen-2-3.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/pikalabs-3.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/i2vgen-xl-3.mp4" width="512" height="512" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+        </table >
+        <br>
+        <table align="center">
+          <td><video src="assets/cmp/InteractiveVideo-1.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/gen-2-1.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/pikalabs-1.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/i2vgen-xl-1.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+          <td colspan="4" style="text-align:center;" width="210">"the tide is flooding"</td>
+        </table>
+        <br>
+        <table align="center">
+          <td><video src="assets/cmp/InteractiveVideo-2.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/gen-2-2.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/pikalabs-2.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/i2vgen-xl-2.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+          <td colspan="4" style="text-align:center;" width="210">"the clouds are becoming dark"</td>
+        </table>
+        <br>
+        <table>
+          <td><video src="assets/cmp/InteractiveVideo-4.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/gen-2-4.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/pikalabs-4.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <td><video src="assets/cmp/i2vgen-xl-4.mp4" width="210" height="210" muted autoplay="autoplay" loop="loop"></video></td>
+          <tr></tr>
+          <td colspan="4" style="text-align:center;" width="210">"the snow is melting"</td>
+        </table>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <div class="columns is-centered has-text-centered">
+  <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
+</div> -->
+
+
+<!-- Video end
+<div class="center-div">
+</div>
+<br>
+<table align="center" width="600px">
+  <tbody>
+      <tr>
+          <td>
+              <div class="center-div">
+                <iframe width="750px" height="415" src="https://www.youtube.com/embed/V8L8xbsTyls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>               
+          </td>
+      </tr>
+      <tr>
+  </tbody>
+</table> -->
+
+
+
+<!-- Result -->
+<!-- <section class="section hero is-light"> -->
+
+<!-- End paper abstract -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      If you find our work useful, please cite our paper. BibTex code is provided below:
+      <pre><code>@inproceedings{zhang2024tvg,
+        title = {TVG: A Training-free Transition Video Generation Method with Diffusion Models},
+        author = {Rui Zhang and Yaosen Chen and Yuegen Liu and  Wei Wang and Xuming Wen and  Hongxia Wang},
+        year = {2024},
+        booktitle = {arxiv}}
+</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
